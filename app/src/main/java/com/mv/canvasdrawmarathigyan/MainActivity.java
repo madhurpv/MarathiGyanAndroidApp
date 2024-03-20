@@ -94,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void saveDrawing() {
         drawingView.saveDrawing(name, String.valueOf(current) + ".png");
-        Toast.makeText(this, "Saved-CanvasDrawMarathiGyanImages/MyDrawing.png", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Saved-CanvasDrawMarathiGyanImages/MyDrawing.png", Toast.LENGTH_SHORT).show();
     }
 
 
