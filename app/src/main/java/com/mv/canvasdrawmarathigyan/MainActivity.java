@@ -40,16 +40,21 @@ public class MainActivity extends AppCompatActivity {
 
         final String[] textViewDrawThisText = {"Draw " + current + " in marathi"};
         textViewDrawThis.setText(textViewDrawThisText[0]);
+        //textViewDrawThis.setText("Draw 6 in Marathi!");
 
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                int upper = 18;
+                int lower = 3;
+                drawingView.setPaintWidth((int) (Math.random() * (upper - lower)) + lower);
                 if (isStoragePermissionGranted()) {
                     saveDrawing();
                     if(current < 9){
                         current++;
                         textViewDrawThisText[0] = "Draw " + current + " in marathi";
                         textViewDrawThis.setText(textViewDrawThisText[0]);
+                        //textViewDrawThis.setText("Draw 6 in Marathi!");
                         drawingView.clearCanvas();
                     }
                     else{
@@ -93,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void saveDrawing() {
-        drawingView.saveDrawing(name, String.valueOf(current) + ".png");
+        drawingView.saveDrawing(name, name + "_" + String.valueOf(current) + ".png");
         //Toast.makeText(this, "Saved-CanvasDrawMarathiGyanImages/MyDrawing.png", Toast.LENGTH_SHORT).show();
     }
 

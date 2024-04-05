@@ -23,8 +23,8 @@ public class DrawingView extends View {
     private Paint paint;
     private float scaleX, scaleY;
 
-    static int WIDTH = 28*4;    // 112
-    static int HEIGHT = 28*4;  //  112
+    static int WIDTH = 128;
+    static int HEIGHT = 128;
 
     public DrawingView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -114,6 +114,10 @@ public class DrawingView extends View {
                 break;
         }
         return true;
+    }
+
+    public void setPaintWidth(int size){
+        paint.setStrokeWidth(size);
     }
 
     public void clearCanvas() {

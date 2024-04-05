@@ -44,6 +44,7 @@ public class StartActivity extends AppCompatActivity {
                 Intent i = new Intent(StartActivity.this, MainActivity.class);
                 i.putExtra("name",editTextName.getText().toString());
                 startActivity(i);
+                editTextName.setText("");
             }
         });
 
